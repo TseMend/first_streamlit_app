@@ -2,8 +2,6 @@
 #NOTE: The requirements file tells Streamlit what Python libraries to load during BOOT (Startup). If you make changes to the requirements file to solve any error messages, you will need to reboot the app so that those changes are received by the app.
 
 snowflake-connector-python
-charset-normalizer==2.0.12
-snowflake-connector-python==2.7.9
-
-
-
+cffi==1.15.0
+pyarrow<8.1.0,>=8.0.0
+streamlit >= 1.9.2
