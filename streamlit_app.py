@@ -33,7 +33,10 @@ streamlit.dataframe(fruityvice_normalized)
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
+my_cur.execute("
+
+               USE ROLE ACCOUNTADMIN;
+               SELECT * FROM FRUIT_LOAD_LIST;")
 my_data_rows = my_cur.fetchall()
 streamlit.header("FRUITLIST CONTAINS:")
 streamlit.dataframe(my_data_rows)
