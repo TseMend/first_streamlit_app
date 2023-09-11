@@ -46,7 +46,7 @@ streamlit.header("FRUITLIST CONTAINS:")
 
 #snowflake related functions
 def get_fruit_load_list():
-  with my_cur = my_cnx.cursor() as my_cur:
+  with my_cnx.cursor() as my_cur:
     my_cur.execute("USE ROLE ACCOUNTADMIN")
     my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
       return my_data_rows = my_cur.fetchall()
